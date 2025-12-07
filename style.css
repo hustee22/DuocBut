@@ -1,0 +1,92 @@
+/* style.css */
+body {
+    background-color: #2b2b2b; /* Nền tối */
+    font-family: 'Noto Sans', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.zhengti {
+    width: 90%;
+    max-width: 350px;
+    padding: 10px;
+}
+
+.juzuo1 {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 500; /* Thay đổi thành 500 để khớp font */
+    margin-bottom: 10px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.top-banner {
+    background-color: #ffc107; /* Màu vàng */
+    color: #333;
+    padding: 15px 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.erweima {
+    padding: 20px 20px 10px 20px; /* Giảm padding dưới để khớp */
+    text-align: center;
+}
+
+.ewm {
+    width: 100%;
+    max-width: 280px; /* Tăng kích thước QR code */
+    margin-bottom: 10px;
+}
+
+.juzuo2 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+.shuaxinerweima {
+    color: #4CAF50; /* Xanh lá */
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-top: 5px;
+    display: block;
+}
+
+.yishengxiao {
+    color: #4CAF50;
+    font-size: 1.3em; /* Kích thước chữ 'Đã có hiệu lực' */
+    font-weight: bold;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.shijian {
+    font-size: 2.5em; /* Kích thước đồng hồ */
+    font-weight: bold;
+    color: #4CAF50;
+    margin-top: 0px;
+    padding-bottom: 10px;
+}
+
+.dierhang {
+    color: #ccc;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 15px 10px;
+}

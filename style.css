@@ -1,4 +1,4 @@
-/* style.css */
+/* style.css (Đã chỉnh sửa) */
 body {
     background-color: #2b2b2b; /* Nền tối */
     font-family: 'Noto Sans', sans-serif;
@@ -18,11 +18,13 @@ body {
     padding: 10px;
 }
 
+/* Vòng tròn 3: Màu chữ ĐEN trên nền Vàng */
 .juzuo1 {
     text-align: center;
     font-size: 1.6em;
-    font-weight: 500; /* Thay đổi thành 500 để khớp font */
+    font-weight: 500;
     margin-bottom: 10px;
+    color: #000; /* Màu chữ ĐEN */
 }
 
 .card {
@@ -33,6 +35,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Vòng tròn 3: Banner trên */
 .top-banner {
     background-color: #ffc107; /* Màu vàng */
     color: #333;
@@ -43,13 +46,13 @@ body {
 }
 
 .erweima {
-    padding: 20px 20px 10px 20px; /* Giảm padding dưới để khớp */
+    padding: 20px 20px 10px 20px;
     text-align: center;
 }
 
 .ewm {
     width: 100%;
-    max-width: 280px; /* Tăng kích thước QR code */
+    max-width: 280px;
     margin-bottom: 10px;
 }
 
@@ -68,24 +71,34 @@ body {
     display: block;
 }
 
+/* Vòng tròn 1: Hiệu ứng nhấp nháy cho '已生效' */
+@keyframes word_breath {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
 .yishengxiao {
     color: #4CAF50;
-    font-size: 1.3em; /* Kích thước chữ 'Đã có hiệu lực' */
+    font-size: 1.3em; 
     font-weight: bold;
     margin-top: 5px;
     cursor: pointer;
+    /* Áp dụng hiệu ứng nhấp nháy */
+    animation: word_breath 1s ease-in-out infinite; 
 }
 
+/* Vòng tròn 1: Đồng hồ thời gian - Màu chữ XANH LÁ */
 .shijian {
-    font-size: 2.5em; /* Kích thước đồng hồ */
+    font-size: 2.5em; 
     font-weight: bold;
-    color: #4CAF50;
+    color: #4CAF50; /* Màu XANH LÁ */
     margin-top: 0px;
     padding-bottom: 10px;
 }
 
+/* Vòng tròn 2: Thông báo an ninh - Màu chữ TRẮNG/XÁM SÁNG */
 .dierhang {
-    color: #ccc;
+    color: #ccc; /* Màu xám sáng */
     text-align: center;
     font-size: 0.9em;
     padding: 15px 10px;

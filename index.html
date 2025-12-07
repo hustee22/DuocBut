@@ -29,7 +29,7 @@
                     已生效
                 </div>
                 
-                <div class="shijian" id="dateTime3">07:23</div>
+                <div class="shijian" id="dateTime3">00:00</div>
             </div>
         </div>
         
@@ -42,12 +42,8 @@
         // Hàm format ngày giờ
         Date.prototype.format = function (fmt) {
             var o = {
-                "y+": this.getFullYear(),
-                "M+": this.getMonth() + 1, 
-                "d+": this.getDate(), 
-                "h+": this.getHours(), 
-                "m+": this.getMinutes(), 
-                "s+": this.getSeconds(), 
+                "y+": this.getFullYear(), "M+": this.getMonth() + 1, "d+": this.getDate(), 
+                "h+": this.getHours(), "m+": this.getMinutes(), "s+": this.getSeconds(), 
             };
             if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
             for (var k in o)
@@ -55,24 +51,20 @@
             return fmt;
         }
 
-        // Cập nhật ngày giờ hiện tại (2025-12-5 23:10:32)
+        // Cập nhật ngày giờ hiện tại
         setInterval(function () {
           const dt = document.getElementById('dateTime00');
           if (dt) {
-            // Định dạng khớp với ảnh mẫu
             dt.innerHTML = (new Date()).format('yyyy-M-d hh:mm:ss');
           }
         }, 1000);
 
-        // Hàm giả lập check-in thành công (Giữ nguyên nội dung gốc để không cần tệp true.png)
+        // Hàm giả lập check-in thành công (Giữ nguyên nội dung gốc)
         function changetxt(){
             document.getElementById('biaoti').innerText="您的设备已符合安全规范";
-            document.getElementById('neirong').innerText="刷新二维码";
-            // Do không có tệp true.png, chúng ta sẽ giữ phần này (nếu bạn có tệp true.png hãy thêm vào)
-            document.getElementById('neirong').innerHTML="<div class='truetxt'><p class='jinchang'>进场成功</p><p class='riqi' id='dateTime01'></p></div>";
-            
-            // Ẩn nút 'Đã có hiệu lực' sau khi click
-            document.querySelector('.yishengxiao').style.display = 'none';
+            // ... (Phần hiển thị ảnh/chữ thành công - bạn có thể thêm logic hiển thị ảnh 'true.png' ở đây nếu có tệp)
+            document.getElementById('neirong').innerHTML = "<div><p class='jinchang'>进场成功</p><p class='riqi' id='dateTime01'></p></div>";
+            document.querySelector('.yishengxiao').style.display = 'none'; // Ẩn chữ '已生效' sau khi click
 
             setInterval(function () {
                 const dt = document.getElementById('dateTime01');
@@ -82,7 +74,7 @@
             }, 1000);
         }
 
-        // Logic Đồng hồ đếm thời gian (reset sau 12h, lưu trạng thái vào localStorage)
+        // Logic Đồng hồ đếm thời gian (LOẠI BỎ LOGIC RESET 12H)
         let startTime = localStorage.getItem("startTime");
         if (!startTime) {
             startTime = Date.now();
@@ -97,21 +89,12 @@
             let mins = Math.floor((diff % 3600) / 60);
             let secs = diff % 60;
 
-            // Nếu đạt tới 12 giờ → reset
-            if (hrs >= 12) {
-                startTime = Date.now();
-                localStorage.setItem("startTime", startTime);
-                hrs = 0;
-                mins = 0;
-                secs = 0;
-            }
-
             let timeString = '';
             if (hrs > 0) {
-                // h:mm:ss (Nếu có giờ)
+                // h:mm:ss
                 timeString = hrs + ':' + (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
             } else {
-                // mm:ss (Nếu chưa tới 1 giờ)
+                // mm:ss
                 timeString = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
             }
             document.getElementById('dateTime3').innerHTML = timeString;
